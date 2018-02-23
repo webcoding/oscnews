@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Dropdown from '../component/Dropdown';
 import Switch from '../component/Switch';
-import logo from '../assets/oschina.svg';
+import logo from '../assets/devnode.svg';
 import chromeApp from '../assets/chrome-app.svg';
 // import gitee from '../assets/gitee.svg';
 import github from '../assets/github.svg';
