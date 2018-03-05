@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import classNames from 'classnames';
 import styles from './index.less';
 import addIcon from '../../assets/add-icon.png';
 import websiteIcon from '../../assets/website.svg';
@@ -13,6 +14,7 @@ export default class Navigation extends Component {
     this.state = {
       navContent: props.dbs.nav,
       optionDown: false,
+      styleItem: {},
       // navContent: [
       //   {
       //     label: '500px',
@@ -83,9 +85,7 @@ export default class Navigation extends Component {
         child[i].style.paddingRight = `${paddingHorizontal}px`;
         const img = child[i].getElementsByTagName('img');
         if (img && img.length > 0) {
-          const imgWidth = subWidth - (paddingHorizontal * 2);
-          img[0].style.width = `${imgWidth}px`;
-          img[0].style.height = `${imgWidth}px`;
+          img[0].style.height = `${img[0].clientWidth}px`;
         }
       }
     }
@@ -112,19 +112,85 @@ export default class Navigation extends Component {
     storage.set({ dbs });
     this.setState({ navContent: itemfilter });
   }
+  onContextMenu(e) {
+    e.preventDefault();
+    const optionDown = !this.state.optionDown;
+    this.setState({ optionDown });
+    return false;
+  }
+  onClickContextMenu(e) {
+    const { optionDown } = this.state;
+    if (optionDown) {
+      e.preventDefault();
+    }
+    this.setState({ optionDown: false });
+  }
+  onDragOver(e) {
+    this.DragOverElm = e.target;
+  }
+  onDragStart(e) {
+    this.parentElm = e.target.parentNode;
+    e.target.classList.add('is-drod');
+  }
+  onDragEnd(e) {
+    const { navContent } = this.state;
+    const { storage, dbs } = this.props;
+    const child = this.parentElm.children;
+    e.target.classList.remove('is-drod');
+    let overIndex = null;
+    let currentIndex = null;
+    for (let i = 0; i < child.length; i += 1) {
+      if (child[i] === this.DragOverElm) overIndex = i;
+      if (child[i] === e.target) currentIndex = i;
+    }
+    if (currentIndex > -1 && overIndex > -1) {
+      const curData = navContent[currentIndex];
+      if (currentIndex > overIndex) {
+        // this.parentElm.insertBefore(e.target, this.DragOverElm);
+        navContent.splice(currentIndex, 1);
+        navContent.splice(overIndex, 0, curData);
+      }
+      if (currentIndex < overIndex) {
+        // this.parentElm.insertBefore(e.target, this.DragOverElm.nextSibling);
+        navContent.splice(overIndex + 1 >= child.length ? overIndex : overIndex + 1, 0, curData);
+        navContent.splice(currentIndex, 1);
+      }
+      this.setState({ navContent });
+      dbs.nav = navContent;
+      storage.set({ dbs });
+    }
+    currentIndex = null;
+    overIndex = null;
+  }
   render() {
     const { navContent, optionDown } = this.state;
     return (
-      <div className={styles.nav}>
+      <div className={styles.nav} onClick={this.onClickContextMenu.bind(this)}>
         <div className={styles.navBox}>
           <div className={styles.navContent} ref={this.resizeContent.bind(this)}>
             {navContent.map((item, idx) => {
-              return (
-                <a key={idx} href={item.value} target="_top">
+              const propsChild = {
+                key: idx,
+                target: '_top',
+                draggable: true,
+                className: classNames({
+                  doc: item.type === 'doc',
+                }),
+                onContextMenu: this.onContextMenu.bind(this),
+                onDragStart: this.onDragStart.bind(this),
+                onDragEnd: this.onDragEnd.bind(this),
+                onDragOver: this.onDragOver.bind(this),
+              };
+              const child = (
+                <span>
                   <img alt={item.label} onError={e => e.target.src = websiteIcon} src={item.icon} />
                   <p>{item.label}</p>
                   {optionDown && <i onClick={this.onKeyDownOption.bind(this, item)} className={styles.keyDown} />}
-                </a>
+                </span>
+              );
+              propsChild.href = optionDown ? '#' : item.value;
+              return (
+                <a {...propsChild}> {child} </a>
               );
             })}
             {navContent.length < 18 && (

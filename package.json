@@ -1,6 +1,6 @@
 {
   "name": "oscnews",
-  "version": "1.7.0",
+  "version": "1.9.0",
   "description": "查看IT更新新闻资讯，文档导航，GitHub 趋势榜，和时钟页面。",
   "main": "index.js",
   "scripts": {
@@ -53,6 +53,7 @@
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "solarlunar": "^2.0.1",
     "webpack-merge": "^4.1.1"
   }
 }

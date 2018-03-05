@@ -190,6 +190,49 @@
         "url": "http://map.qq.com/"
       },
       {
+        "label": "天地图",
+        "value": "tianditu",
+        "url": "http://map.tianditu.com/"
+      },
+      {
+        "label": "地球在线",
+        "value": "earthol",
+        "url": "http://www.earthol.com/"
+      },
+      {
+        "label": "地图吧",
+        "value": "mapbar",
+        "url": "http://www.mapbar.com/"
+      },
+      {
+        "label": "凯立德",
+        "value": "careland",
+        "url": "http://map.careland.com.cn/"
+      },
+      {
+        "label": "360地图",
+        "value": "so",
+        "url": "https://ditu.so.com/"
+      },
+      {
+        "label": "城市吧",
+        "value": "city8",
+        "target": "_blank",
+        "url": "http://ditu.city8.com/"
+      },
+      {
+        "label": "三维地图",
+        "value": "edushi",
+        "target": "_blank",
+        "url": "http://sh.edushi.com/"
+      },
+      {
+        "label": "船讯网",
+        "value": "shipxy",
+        "target": "_blank",
+        "url": "http://www.shipxy.com/"
+      },
+      {
         "label": "搜狗",
         "value": "sogou",
         "url": "http://map.sogou.com"
@@ -237,6 +280,11 @@
     "value": "icon",
     "children": [
       {
+        "label": "iconfont",
+        "value": "iconfont",
+        "url": "http://www.iconfont.cn/search/index?q={{kw}}"
+      },
+      {
         "label": "FindIcons",
         "value": "findicons",
         "url": "https://findicons.com/search/{{kw}}"
@@ -247,14 +295,29 @@
         "url": "https://icons8.cn/icon/set/{{kw}}/all"
       },
       {
+        "label": "Share Icon",
+        "value": "shareicon",
+        "url": "https://www.shareicon.net/search?kwd={{kw}}"
+      },
+      {
+        "label": "worldvectorlogo",
+        "value": "worldvectorlogo",
+        "url": "https://worldvectorlogo.com/search/{{kw}}"
+      },
+      {
+        "label": "Instant Logo",
+        "value": "instantlogosearch",
+        "url": "http://instantlogosearch.com/?q={{kw}}"
+      },
+      {
+        "label": "60logo",
+        "value": "60logo",
+        "url": "http://www.60logo.com/plus/search.php?q={{kw}}"
+      },
+      {
         "label": "IconFinder",
         "value": "iconfinder",
         "url": "https://www.iconfinder.com/search/?q={{kw}}"
-      },
-      {
-        "label": "iconfont",
-        "value": "iconfont",
-        "url": "http://www.iconfont.cn/search/index?q={{kw}}"
       },
       {
         "label": "EasyIcon",
@@ -304,6 +367,10 @@
         "label": "花瓣",
         "value": "huaban",
         "url": "http://huaban.com/search/?q={{kw}}"
+      }, {
+        "label": "视觉中国",
+        "value": "shijue",
+        "url": "http://shijue.me/community/search?search=works&key={{kw}}"
       }, {
         "label": "UI中国",
         "value": "uicn",
@@ -496,6 +563,11 @@
         "url": "https://www.aminer.cn/search?q={{kw}}"
       },
       {
+        "label": "机器之心",
+        "value": "jiqizhixin",
+        "url": "https://handbook.jiqizhixin.com/search/{{kw}}"
+      },
+      {
         "label": "必应学术",
         "value": "bing",
         "url": "https://cn.bing.com/academic/search?q={{kw}}"
@@ -631,6 +703,11 @@
         "label": "桌博人才",
         "value": "jobcn",
         "url": "http://www.jobcn.com/search/result.xhtml?p.keyword={{kw}}"
+      },
+      {
+        "label": "大街",
+        "value": "dajie",
+        "url": "https://so.dajie.com/job/search?keyword={{kw}}"
       },
       {
         "label": "中国人才热线",
