@@ -115,7 +115,7 @@ export default class Header extends Component {
     return (
       <div className={styles.switchItem} onClick={this.onClickSwitchHideHeader.bind(this)}>
         <span>显示导航</span>
-        <Switch className={styles.switch} checked={this.state.visible} onChange={this.onChangeSwitchHideHeader.bind(this)}/>
+        <Switch className={styles.switch} checked={this.state.visible} onChange={this.onChangeSwitchHideHeader.bind(this)} />
       </div>
     );
   }
