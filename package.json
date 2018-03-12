@@ -1,7 +1,7 @@
 {
   "name": "oscnews",
-  "version": "1.9.0",
-  "description": "查看IT更新新闻资讯，文档导航，GitHub 趋势榜，和时钟页面。",
+  "version": "1.10.0",
+  "description": "开源中国新闻，查看开源中国软件更新资讯，文档导航，GitHub 趋势榜，和时钟页面。",
   "main": "index.js",
   "scripts": {
     "build": "webpack --config conf/webpack.config.prod.js",

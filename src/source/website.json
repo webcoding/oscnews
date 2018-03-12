@@ -454,6 +454,11 @@
         "icon": "https://jaywcjlove.github.io/logo/cyzone.jpg"
       },
       {
+        "label": "极客邦",
+        "value": "https://www.geekbang.org",
+        "icon": "https://jaywcjlove.github.io/logo/geekbang.svg"
+      },
+      {
         "label": "Engadget",
         "value": "https://cn.engadget.com",
         "icon": "https://jaywcjlove.github.io/logo/engadget.svg"
@@ -613,7 +618,7 @@
       {
         "label": "和讯",
         "value": "http://www.hexun.com/",
-        "icon": "https://jaywcjlove.github.io/logo/hexun.png"
+        "icon": "https://jaywcjlove.github.io/logo/hexun.svg"
       },
       {
         "label": "中国经济网",
@@ -684,7 +689,7 @@
       {
         "label": "蚂蜂窝",
         "value": "http://www.mafengwo.cn/",
-        "icon": "https://jaywcjlove.github.io/logo/mafengwo.png"
+        "icon": "https://jaywcjlove.github.io/logo/mafengwo.svg"
       },
       {
         "label": "携程",
@@ -1003,6 +1008,11 @@
         "label": "CodePen",
         "value": "https://codepen.io/",
         "icon": "https://jaywcjlove.github.io/logo/codepen.svg"
+      },
+      {
+        "label": "JS Fiddle",
+        "value": "https://jsfiddle.net",
+        "icon": "https://jaywcjlove.github.io/logo/jsfiddle.svg"
       },
       {
         "label": "RunJS",
