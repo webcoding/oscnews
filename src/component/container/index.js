@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import Header from '../Header';
-import OSCNews from '../OSCNews';
+import News from '../News';
 import styles from './index.less';
 
 export default class Container extends Component {
@@ -55,7 +55,7 @@ export default class Container extends Component {
   render() {
     const { children, config } = this.props;
     const { visible, siderBarWidth } = this.state;
-    const OSCNewsLeft = () => {
+    const NewsLeft = () => {
       if (config.conf.isHideOSC) return visible ? 0 : -siderBarWidth;
       return -siderBarWidth;
     };
@@ -75,13 +75,13 @@ export default class Container extends Component {
           />
         </div>
         <div className={styles.content}>
-          <div ref={node => this.siderBar = node} className={styles.oscnews} style={{ marginLeft: OSCNewsLeft(), width: siderBarWidth }}>
+          <div ref={node => this.siderBar = node} className={styles.News} style={{ marginLeft: NewsLeft(), width: siderBarWidth }}>
             {config.conf.isHideOSC && (
               <div className={classNames(styles.switchBtn, { show: visible, hidden: !visible })} onClick={this.onSwitchBtn.bind(this)}>
                 {visible ? '隐藏' : '显示新闻'}
               </div>
             )}
-            <OSCNews {...config} />
+            <News {...config} />
             <div
               onMouseDown={this.onMouseDown.bind(this)}
               className={styles.newsBar}
